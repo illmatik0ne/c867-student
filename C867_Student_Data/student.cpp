@@ -7,7 +7,10 @@ Student::Student(int studentID, char firstName, char lastName, char emailAddress
 {
 	this->g_studentID = studentID;
 	this->g_firstName = firstName;
-
+	this->g_lastName = lastName;
+	this->g_emailAddress = emailAddress;
+	this->g_age = age;
+	this->setDegreeNumDays(degreeNumDays1, degreeNumDays2, degreeNumDays3);
 }
 
 // Student function
@@ -19,7 +22,7 @@ int Student::getStudentID()
 
 void Student::setStudentID(int studentID)
 { 
-	g_studentID = studentID; 
+	this->g_studentID = studentID;
 }
 
 char Student::getFirstName()
@@ -29,7 +32,7 @@ char Student::getFirstName()
 
 void Student::setFirstName(char firstName)
 {
-	g_firstName = firstName;
+	this->g_firstName = firstName;
 }
 
 char Student::getLastName()
@@ -39,7 +42,7 @@ char Student::getLastName()
 
 void Student::setLastName(char lastName)
 {
-	g_lastName = lastName;
+	this->g_lastName = lastName;
 }
 
 char Student::getEmailAddress()
@@ -49,7 +52,7 @@ char Student::getEmailAddress()
 
 void Student::setEmailAddress(char emailAddress)
 {
-	g_emailAddress = emailAddress;
+	this->g_emailAddress = emailAddress;
 }
 
 int Student::getAge()
@@ -59,7 +62,7 @@ int Student::getAge()
 
 void Student::setAge(int age)
 {
-	g_age = age;
+	this->g_age = age;
 }
 
 int* Student::getDegreeNumDays()
@@ -69,7 +72,7 @@ int* Student::getDegreeNumDays()
 
 void Student::setDegreeNumDays(int degreeNumDays1, int degreeNumDays2, int degreeNumDays3)
 {
-	g_degreeNumDays[0] = degreeNumDays1;
-	g_degreeNumDays[1] = degreeNumDays2;
-	g_degreeNumDays[2] = degreeNumDays3;
+	this->g_degreeNumDays[0] = degreeNumDays1;
+	this->g_degreeNumDays[1] = degreeNumDays2;
+	this->g_degreeNumDays[2] = degreeNumDays3;
 }
