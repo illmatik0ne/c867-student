@@ -1,6 +1,8 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
+#include <vector>
+
 // Declare the Student class
 
 class Student
@@ -11,10 +13,10 @@ class Student
 		char g_lastName;
 		char g_emailAddress;
 		int g_age;
-		int g_degreeNumDays[3];
+		std::vector<int> g_degreeNumDays;
 
 	public:
-		Student(int studentID, char firstName, char lastName, char emailAddress, int age, int degreeNumDays1, int degreeNumDays2, int degreeNumDays3);  // default constructor
+		Student(int studentID, char firstName, char lastName, char emailAddress, int age, std::vector<int> degreeNumDays);  // default constructor
 			
 		int getStudentID();
 		void setStudentID(int studentID);
@@ -31,10 +33,8 @@ class Student
 		int getAge();
 		void setAge(int age);
 		
-		int* getDegreeNumDays();
-		void setDegreeNumDays(int degreeNumDays1, int degreeNumDays2, int degreeNumDays3);
-
-
+		std::vector<int> getDegreeNumDays();
+		void setDegreeNumDays(std::vector<int> degreeNumDays);
 };
 
 #endif
