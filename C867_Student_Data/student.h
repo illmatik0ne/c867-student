@@ -1,7 +1,9 @@
 #ifndef STUDENT_H
 #define STUDENT_H
-
-#include <vector>
+#include "degree.h"
+#include "networkStudent.h"
+#include "softwareStudent.h"
+#include "securityStudent.h"
 
 // Declare the Student class
 
@@ -13,28 +15,29 @@ class Student
 		char g_lastName;
 		char g_emailAddress;
 		int g_age;
-		std::vector<int> g_degreeNumDays;
+		int g_degreeNumDays[3];
+		char g_degreeType;
 
 	public:
-		Student(int studentID, char firstName, char lastName, char emailAddress, int age, std::vector<int> degreeNumDays);  // default constructor
+		Student(int studentID, char firstName, char lastName, char emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, char degreeType);  // default constructor
 			
-		int getStudentID();
+		int getStudentID() const;
+		char getFirstName() const;
+		char getLastName() const;
+		char getEmailAddress() const;
+		int getAge() const;
+		int getDegreeNumDays() const;
+		char getDegreeType() const;
+
+
 		void setStudentID(int studentID);
-
-		char getFirstName();
 		void setFirstName(char firstName);
-				
-		char getLastName();
 		void setLastName(char lastName);
-
-		char getEmailAddress();
 		void setEmailAddress(char emailAddress);
-		
-		int getAge();
 		void setAge(int age);
-		
-		std::vector<int> getDegreeNumDays();
-		void setDegreeNumDays(std::vector<int> degreeNumDays);
+		void setDegreeNumDays(int daysInCourse1, int daysInCourse2, int daysInCourse3);
+		void setDegreeType(char degreeType);
+
 };
 
 #endif
