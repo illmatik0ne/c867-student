@@ -1,43 +1,39 @@
 #ifndef STUDENT_H
 #define STUDENT_H
+#include <string>
 #include "degree.h"
-#include "networkStudent.h"
-#include "softwareStudent.h"
-#include "securityStudent.h"
 
-// Declare the Student class
+class Student {
 
-class Student
-{
-	private:
-		int g_studentID;
-		char g_firstName;
-		char g_lastName;
-		char g_emailAddress;
-		int g_age;
-		int g_degreeNumDays[3];
-		char g_degreeType;
+private:
+	std::string studentID;
+	std::string firstName;
+	std::string lastName;
+	std::string emailAddress;
+	int age, daysInCourse1, daysInCourse2, daysInCourse3;
+	int days[3];
 
-	public:
-		Student(int studentID, char firstName, char lastName, char emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, char degreeType);  // default constructor
-			
-		int getStudentID() const;
-		char getFirstName() const;
-		char getLastName() const;
-		char getEmailAddress() const;
-		int getAge() const;
-		int getDegreeNumDays() const;
-		char getDegreeType() const;
+public:
 
+	Student();
+	Student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int* days);
 
-		void setStudentID(int studentID);
-		void setFirstName(char firstName);
-		void setLastName(char lastName);
-		void setEmailAddress(char emailAddress);
-		void setAge(int age);
-		void setDegreeNumDays(int daysInCourse1, int daysInCourse2, int daysInCourse3);
-		void setDegreeType(char degreeType);
+	std::string get_studentID();
+	std::string get_firstName();
+	std::string get_lastName();
+	std::string get_emailAddress();
+	int get_age();
+	int get_days(int i);
+	virtual Degree getDegreeProgram() = 0;
+
+	std::string set_studentID(std::string);
+	std::string set_firstName(std::string);
+	std::string set_lastName(std::string);
+	std::string set_emailAddress(std::string);
+	int set_age(int);
+	int* set_days(int, int, int);
+	
+	void printStudent();
 
 };
-
 #endif

@@ -1,82 +1,102 @@
 #include "stdafx.h"
 #include "student.h"
+#include <iostream>
 
-// Student constructor
+using namespace std;
 
-Student::Student(int studentID, char firstName, char lastName, char emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, char degreeType)
+Student::Student() {};
+Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int* days) {};
+
+//Student::Student(std::string v_studentID, std::string v_firstName, std::string v_lastName, std::string v_emailAddress,
+//	int v_age, int* days, std::string v_degreeProgram) {
+//	studentID = v_studentID;
+//	firstName = v_firstName;
+//	lastName = v_lastName;
+//	emailAddress = v_emailAddress;
+//	age = v_age;
+//	days = v_days;
+//	degreeProgram = v_degreeProgram;
+//}
+
+
+std::string Student::get_studentID()
 {
-	this->g_studentID = studentID;
-	this->g_firstName = firstName;
-	this->g_lastName = lastName;
-	this->g_emailAddress = emailAddress;
-	this->g_age = age;
-	this->setDegreeNumDays(daysInCourse1, daysInCourse2, daysInCourse3);
-	this->g_degreeType = degreeType;
+	return studentID;
+}
+
+std::string Student::get_firstName()
+{
+	return firstName;
+}
+
+std::string Student::get_lastName()
+{
+	return lastName;
+}
+
+std::string Student::get_emailAddress()
+{
+	return emailAddress;
+}
+
+int Student::get_age()
+{
+	return age;
+}
+
+int Student::get_days(int i)
+{
+	return days[i];
 }
 
 
-// Accessors
 
-
-int Student::getStudentID() const { 
-	return g_studentID; 
+std::string Student::set_studentID(std::string v_studentID)
+{
+	studentID = v_studentID;
+	return studentID;
 }
 
-char Student::getFirstName() const {
-	return g_firstName;
+std::string Student::set_firstName(std::string v_firstName)
+{
+	firstName = v_firstName;
+	return firstName;
 }
 
-char Student::getLastName() const {
-	return g_lastName;
+std::string Student::set_lastName(std::string v_lastName)
+{
+	lastName = v_lastName;
+	return lastName;
 }
 
-char Student::getEmailAddress() const {
-	return g_emailAddress;
+std::string Student::set_emailAddress(std::string v_emailAddress)
+{
+	emailAddress = v_emailAddress;
+	return emailAddress;
 }
 
-int Student::getAge() const {
-	return g_age;
+int Student::set_age(int v_age)
+{
+	age = v_age;
+	return age;
 }
 
-int Student::getDegreeNumDays() const {
-	return g_degreeNumDays[3];
+int* Student::set_days(int v_daysInCourse1, int v_daysInCourse2, int v_daysInCourse3)
+{
+	days[0] = v_daysInCourse1;
+	days[1] = v_daysInCourse2;
+	days[2] = v_daysInCourse3;
+	return days;
 }
 
-char Student::getDegreeType() const {
-	return g_degreeType;
+void Student::printStudent()
+{
+	std::cout << "Student Information:" << '\n' <<
+		'\t' << "StudentID: " << get_studentID() << '\n' <<
+		'\t' << "First Name: " << get_firstName() << '\n' <<
+		'\t' << "Last Name: " << get_lastName() << '\n' <<
+		'\t' << "Email Address: " << get_emailAddress() << '\n' <<
+		'\t' << "Age: " << get_age() << '\n' <<
+		'\t' << "Days In Course: " << "{" << get_days(0) << ", " << get_days(1) << ", " << get_days(2) << "}" << '\n';
+
 }
-
-
-// Mutators
-
-
-void Student::setStudentID(int studentID) { 
-	this->g_studentID = studentID;
-}
-
-void Student::setFirstName(char firstName) {
-	this->g_firstName = firstName;
-}
-
-void Student::setLastName(char lastName) {
-	this->g_lastName = lastName;
-}
-
-void Student::setEmailAddress(char emailAddress) {
-	this->g_emailAddress = emailAddress;
-}
-
-void Student::setAge(int age) {
-	this->g_age = age;
-}
-
-void Student::setDegreeNumDays(int daysInCourse1, int daysInCourse2, int daysInCourse3) {
-	g_degreeNumDays[0] = daysInCourse1;
-	g_degreeNumDays[1] = daysInCourse2;
-	g_degreeNumDays[2] = daysInCourse3;
-}
-
-void Student::setDegreeType(char degreeType) {
-	g_degreeType = degreeType;
-}
-

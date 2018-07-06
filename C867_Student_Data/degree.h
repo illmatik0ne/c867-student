@@ -8,7 +8,7 @@ enum Degree
 	// The following data elements are allowed in the Degree data type
 	SECURITY,
 	NETWORK,
-	SOFTWARE,
+	SOFTWARE
 };
 
 #endif
