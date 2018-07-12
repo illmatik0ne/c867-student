@@ -8,8 +8,12 @@ class Roster {
 private:
 
 	Student ** classRosterArray;
+	int numStudents = 0;
 
 public:
+	Roster();
+	Roster(int maxStudents);
+	~Roster();
 
 	void add(std::string, std::string, std::string, std::string, int, int, int, int, Degree);
 	void remove(std::string);

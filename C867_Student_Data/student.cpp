@@ -5,18 +5,20 @@
 using namespace std;
 
 Student::Student() {};
-Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int* days) {};
 
-//Student::Student(std::string v_studentID, std::string v_firstName, std::string v_lastName, std::string v_emailAddress,
-//	int v_age, int* days, std::string v_degreeProgram) {
-//	studentID = v_studentID;
-//	firstName = v_firstName;
-//	lastName = v_lastName;
-//	emailAddress = v_emailAddress;
-//	age = v_age;
-//	days = v_days;
-//	degreeProgram = v_degreeProgram;
-//}
+Student::~Student() {};
+
+//Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int* days) {};
+
+Student::Student(std::string v_studentID, std::string v_firstName, std::string v_lastName, std::string v_emailAddress,
+	int v_age, int* days) {
+	this->set_studentID(v_studentID);
+	this->set_firstName(v_firstName);
+	this->set_lastName(v_lastName);
+	this->set_emailAddress(v_emailAddress);
+	this->set_age(v_age);
+	this->set_days(days[0], days[1], days[2]);
+}
 
 
 std::string Student::get_studentID()
@@ -97,6 +99,7 @@ void Student::printStudent()
 		'\t' << "Last Name: " << get_lastName() << '\n' <<
 		'\t' << "Email Address: " << get_emailAddress() << '\n' <<
 		'\t' << "Age: " << get_age() << '\n' <<
-		'\t' << "Days In Course: " << "{" << get_days(0) << ", " << get_days(1) << ", " << get_days(2) << "}" << '\n';
+		'\t' << "Days In Course: " << "{" << get_days(0) << ", " << get_days(1) << ", " << get_days(2) << "}" << '\n' <<
+		'\t' << "Degree Program: " << getDegreeProgram() << '\n';
 
 }

@@ -16,6 +16,8 @@ private:
 public:
 
 	Student();
+	~Student();
+
 	Student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int* days);
 
 	std::string get_studentID();
@@ -31,7 +33,7 @@ public:
 	std::string set_lastName(std::string);
 	std::string set_emailAddress(std::string);
 	int set_age(int);
-	int* set_days(int, int, int);
+	int* set_days(int v_daysInCourse1, int v_daysInCourse2, int v_daysInCourse3);
 	
 	void printStudent();
 

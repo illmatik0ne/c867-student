@@ -7,6 +7,7 @@ SoftwareStudent::SoftwareStudent(std::string studentID, std::string firstName, s
 	degreeprogram = SOFTWARE;
 }
 
+
 Degree SoftwareStudent::getDegreeProgram()
 {
 	return degreeprogram;
