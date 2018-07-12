@@ -10,8 +10,8 @@ Student::~Student() {};
 
 //Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int* days) {};
 
-Student::Student(std::string v_studentID, std::string v_firstName, std::string v_lastName, std::string v_emailAddress,
-	int v_age, int* days) {
+Student::Student(std::string v_studentID, std::string v_firstName, std::string v_lastName, std::string v_emailAddress, int v_age, int* days) 
+{
 	this->set_studentID(v_studentID);
 	this->set_firstName(v_firstName);
 	this->set_lastName(v_lastName);
