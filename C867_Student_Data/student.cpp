@@ -68,6 +68,7 @@ std::string Student::get_DegreeProgramString(Degree degreeprogram)
 		str_degreeprogram = "SOFTWARE";
 		return str_degreeprogram;
 	}
+	return str_degreeprogram;
 }
 
 std::string Student::set_studentID(std::string v_studentID)
@@ -117,6 +118,6 @@ void Student::printStudent()
 		'\t' << "Email Address: " << get_emailAddress() << '\n' <<
 		'\t' << "Age: " << get_age() << '\n' <<
 		'\t' << "Days In Course: " << "{" << get_days(0) << ", " << get_days(1) << ", " << get_days(2) << "}" << '\n' <<
-		'\t' << "Degree Program: " << get_DegreeProgramString(getDegreeProgram()) << '\n';
+		'\t' << "Degree Program: " << get_DegreeProgramString( getDegreeProgram() ) << '\n';
 
 }
