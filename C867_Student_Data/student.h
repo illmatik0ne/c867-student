@@ -27,6 +27,7 @@ public:
 	int get_age();
 	int get_days(int i);
 	virtual Degree getDegreeProgram() = 0;
+	std::string get_DegreeProgramString(Degree degreeprogram); // This method returns the degree Program as a string for console output and a cleaner print function
 
 	std::string set_studentID(std::string);
 	std::string set_firstName(std::string);
