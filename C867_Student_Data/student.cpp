@@ -8,8 +8,6 @@ Student::Student() {};
 
 Student::~Student() {};
 
-//Student::Student(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int* days) {};
-
 Student::Student(std::string v_studentID, std::string v_firstName, std::string v_lastName, std::string v_emailAddress, int v_age, int* days) 
 {
 	this->set_studentID(v_studentID);
@@ -51,7 +49,26 @@ int Student::get_days(int i)
 	return days[i];
 }
 
+std::string Student::get_DegreeProgramString(Degree degreeprogram)
+{
+	std::string str_degreeprogram = "DROPOUT";
 
+	if (degreeprogram == SECURITY)
+	{
+		str_degreeprogram = "SECURITY";
+		return str_degreeprogram;
+	}
+	else if (degreeprogram == NETWORK)
+	{
+		str_degreeprogram = "NETWORK";
+		return str_degreeprogram;
+	}
+	else if (degreeprogram == SOFTWARE)
+	{
+		str_degreeprogram = "SOFTWARE";
+		return str_degreeprogram;
+	}
+}
 
 std::string Student::set_studentID(std::string v_studentID)
 {
@@ -100,6 +117,6 @@ void Student::printStudent()
 		'\t' << "Email Address: " << get_emailAddress() << '\n' <<
 		'\t' << "Age: " << get_age() << '\n' <<
 		'\t' << "Days In Course: " << "{" << get_days(0) << ", " << get_days(1) << ", " << get_days(2) << "}" << '\n' <<
-		'\t' << "Degree Program: " << getDegreeProgram() << '\n';
+		'\t' << "Degree Program: " << get_DegreeProgramString(getDegreeProgram()) << '\n';
 
 }

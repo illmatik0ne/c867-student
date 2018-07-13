@@ -8,17 +8,17 @@ class Roster {
 private:
 
 	Student ** classRosterArray;
-	int numStudents = 0;
+	int maxStudents = 0;
 
 public:
-	Roster();
 	Roster(int maxStudents);
 	~Roster();
 
 	void add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree degreeprogram);
 	void remove(std::string);
-	void printDaysInCourse(std::string studentID);
+	void printAverageDaysInCourse(std::string studentID);
 	void printAll();
+	void printByDegreeProgram(Degree degreeProgram);
 
 };
 #endif
