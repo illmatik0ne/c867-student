@@ -15,7 +15,6 @@ public:
 	~SoftwareStudent();
 
 	Degree getDegreeProgram();
-	void print();
 };
 
 #endif

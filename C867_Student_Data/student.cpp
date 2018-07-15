@@ -111,13 +111,12 @@ int* Student::set_days(int v_daysInCourse1, int v_daysInCourse2, int v_daysInCou
 
 void Student::printStudent()
 {
-	std::cout << "Student Information:" << '\n' <<
-		'\t' << "StudentID: " << get_studentID() << '\n' <<
-		'\t' << "First Name: " << get_firstName() << '\n' <<
-		'\t' << "Last Name: " << get_lastName() << '\n' <<
-		'\t' << "Email Address: " << get_emailAddress() << '\n' <<
-		'\t' << "Age: " << get_age() << '\n' <<
-		'\t' << "Days In Course: " << "{" << get_days(0) << ", " << get_days(1) << ", " << get_days(2) << "}" << '\n' <<
-		'\t' << "Degree Program: " << get_DegreeProgramString( getDegreeProgram() ) << '\n';
+	std::cout << "StudentID: " << get_studentID() << '\t' <<
+		"First Name: " << get_firstName() << '\t' <<
+		"Last Name: " << get_lastName() <<'\t' <<
+		"Email Address: " << get_emailAddress() << '\t' <<
+		"Age: " << get_age() << '\t' <<
+		"Days In Course: " << "{" << get_days(0) << ", " << get_days(1) << ", " << get_days(2) << "}" << '\t' <<
+		"Degree Program: " << get_DegreeProgramString( getDegreeProgram() ) << '\n';
 
 }

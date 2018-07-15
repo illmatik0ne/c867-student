@@ -16,7 +16,6 @@ public:
 	~SecurityStudent();
 
 	Degree getDegreeProgram();
-	void print();
 };
 
 #endif

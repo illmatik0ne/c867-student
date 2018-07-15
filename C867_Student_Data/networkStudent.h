@@ -16,7 +16,6 @@ public:
 	~NetworkStudent();
 
 	Degree getDegreeProgram();
-	void print();
 };
 
 #endif
